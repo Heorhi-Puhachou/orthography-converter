@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Locale;
 
 public class Zapusk {
 
@@ -96,12 +97,20 @@ public class Zapusk {
     }
 
     static BazavyKanvertar getConverterByStyles(String inputStyle, String outputStyle) throws PamylkaVybaryPravapisu {
-        if (inputStyle.length() != 2
-                || outputStyle.length() != 2
-                || !hetaValidnyKodPravapisy(inputStyle + outputStyle)) {
+        if (inputStyle.length() != 2 || outputStyle.length() != 2) {
             throw new PamylkaVybaryPravapisu();
         }
 
-        return VidKanvertacyi.valueOf(inputStyle + outputStyle).kanvertar;
+        String kod = toEnumCode(inputStyle) + toEnumCode(outputStyle);
+        if (!hetaValidnyKodPravapisy(kod)) {
+            throw new PamylkaVybaryPravapisu();
+        }
+
+        return VidKanvertacyi.valueOf(kod).kanvertar;
+    }
+
+    // Karystalnik piša "ŁT" i ŭ luboj veličyni litar, a ŭ VidKanvertacyi kody zapisanyja jak "LT"
+    static String toEnumCode(String style) {
+        return style.toUpperCase(Locale.ROOT).replace('Ł', 'L');
     }
 }
