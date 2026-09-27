@@ -76,11 +76,7 @@ public class Main {
     }
 
     static void convertToFile(String inputPath, String outputPath, BaseConverter converter) throws IOException {
-        String input = readFile(inputPath);
-        System.out.println(input);
-        String output = converter.convert(input);
-        System.out.println(output);
-        writeToFile(output, outputPath);
+        writeToFile(converter.convert(readFile(inputPath)), outputPath);
     }
 
     static boolean validStyle(String style) {

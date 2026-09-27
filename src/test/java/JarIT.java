@@ -49,5 +49,6 @@ public class JarIT {
 
         assertEquals(0, process.waitFor(), log);
         assertEquals(Files.readString(dir.resolve("expected.txt")), Files.readString(output), log);
+        assertEquals("", log, "paśpiachovaja kanvertacyja ničoha nie drukuje");
     }
 }

@@ -70,11 +70,7 @@ public class KKKAConverter extends BaseConverter {
         convertedValue = replaceEnd(convertedValue);
         convertedValue = checkSoftSign(convertedValue);
         convertedValue = checkSoftSignForDoubles(convertedValue);
-        convertedValue = transformCase(current.getWordCase(), convertedValue);
-        if (!transformCase(current.getWordCase(), current.getWord()).equals(convertedValue)) {
-            System.out.println(transformCase(current.getWordCase(), current.getWord()) + " -> " + convertedValue);
-        }
-        return convertedValue;
+        return transformCase(current.getWordCase(), convertedValue);
     }
 
     // й -> і
