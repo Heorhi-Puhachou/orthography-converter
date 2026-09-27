@@ -7,8 +7,6 @@ public class LAKKConverter extends BaseConverter {
             return text;
         }
         String officialText = (new LAKAConverter()).convert(text);   // LA -> KA
-        // KA -> KK
-
-        return (new KAKKConverter()).convert(officialText);
+        return (new KAKKConverter()).convert(officialText); // KA -> KK
     }
 }
