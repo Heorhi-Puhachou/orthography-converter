@@ -1,8 +1,11 @@
 ## Kanvertar dla pravapisaŭ biełaruskaj movy
 
 #### ŁT - Łacinka Tradycyjnaja
+
 #### LA - Łacinka Aficyjnaja
+
 #### KK - Kiryličny Klasyčny (pravapis)
+
 #### KA - Kiryličny Aficyjny (pravapis)
 
 Dadzieny prajekt moža vykarystoŭvacca abo jak zaležnaść u inšych prajektach, abo jak samastojny jar-fajł.

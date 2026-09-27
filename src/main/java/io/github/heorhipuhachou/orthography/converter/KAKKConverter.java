@@ -22,7 +22,7 @@ import static io.github.heorhipuhachou.orthography.util.StringUtilTransform.tran
 
 public class KAKKConverter extends BaseConverter {
 
-    private Parser parser;
+    private final Parser parser;
 
     public KAKKConverter() {
         this.parser = new Parser();
@@ -100,7 +100,7 @@ public class KAKKConverter extends BaseConverter {
     // з'езд -> зьезд
     private String checkApost(String current) {
         if (current.contains("з'")) {
-            return current.replace("з'","зь");
+            return current.replace("з'", "зь");
         }
         return current;
     }

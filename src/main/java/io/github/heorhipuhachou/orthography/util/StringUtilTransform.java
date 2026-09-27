@@ -9,15 +9,11 @@ public class StringUtilTransform {
     }
 
     public static String transformCase(WordCase wordCase, String word) {
-        switch (wordCase) {
-            case FIRST_LETTER_UPPER:
-                return firstLetterToUpperCase(word);
-            case ALL_LETTERS_UPPER:
-                return word.toUpperCase();
-            case ALL_LETTERS_LOWER:
-                return word.toLowerCase();
-            default:
-                return word;
-        }
+        return switch (wordCase) {
+            case FIRST_LETTER_UPPER -> firstLetterToUpperCase(word);
+            case ALL_LETTERS_UPPER -> word.toUpperCase();
+            case ALL_LETTERS_LOWER -> word.toLowerCase();
+            default -> word;
+        };
     }
 }

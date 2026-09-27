@@ -8,7 +8,7 @@ public class StartReplace {
     private static StartReplace single_instance = null;
 
 
-    private ArrayList<ReplacementPair> startReplace;
+    private final ArrayList<ReplacementPair> startReplace;
 
 
     private StartReplace() {

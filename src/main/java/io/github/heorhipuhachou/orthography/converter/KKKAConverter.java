@@ -22,7 +22,7 @@ import static io.github.heorhipuhachou.orthography.util.StringUtilTransform.tran
 
 public class KKKAConverter extends BaseConverter {
 
-    private Parser parser;
+    private final Parser parser;
 
     public KKKAConverter() {
         this.parser = new Parser();
@@ -44,8 +44,7 @@ public class KKKAConverter extends BaseConverter {
                 result.append(current.getDelimiter()).append(current.getOriginalWord());
             } else {
                 ParsedElement prev = getPrevElement(elements, index);
-                ParsedElement next = getNextElement(elements, index);
-                result.append(elements.get(index).getDelimiter()).append(convertElement(prev, current, next));
+                result.append(elements.get(index).getDelimiter()).append(convertElement(prev, current));
             }
         }
         return result.toString();
@@ -59,21 +58,13 @@ public class KKKAConverter extends BaseConverter {
         }
     }
 
-    private ParsedElement getNextElement(ArrayList<ParsedElement> elements, int index) {
-        if (index < elements.size() - 1) {
-            return elements.get(index + 1);
-        } else {
-            return null;
-        }
-    }
-
-    private String convertElement(ParsedElement prev, ParsedElement current, ParsedElement next) {
+    private String convertElement(ParsedElement prev, ParsedElement current) {
         String convertedValue = checkI(prev, current.getWord(), current.getDelimiter());
         convertedValue = checkDz(convertedValue);
         convertedValue = checkApost(convertedValue);
-        convertedValue = checkZ(convertedValue, next);
-        convertedValue = checkNe(convertedValue, next);
-        convertedValue = checkBez(convertedValue, next);
+        convertedValue = checkZ(convertedValue);
+        convertedValue = checkNe(convertedValue);
+        convertedValue = checkBez(convertedValue);
         convertedValue = templateReplace(convertedValue);
         convertedValue = replaceStart(convertedValue);
         convertedValue = replaceEnd(convertedValue);
@@ -109,7 +100,7 @@ public class KKKAConverter extends BaseConverter {
 
     // зь -> з
     // празь -> праз
-    private String checkZ(String current, ParsedElement next) {
+    private String checkZ(String current) {
         if (current.equals("зь")) {
             return "з";
         }
@@ -120,7 +111,7 @@ public class KKKAConverter extends BaseConverter {
     }
 
     // ня -> не
-    private String checkNe(String current, ParsedElement next) {
+    private String checkNe(String current) {
         if (current.equals("ня")) {
             return "не";
         }
@@ -129,7 +120,7 @@ public class KKKAConverter extends BaseConverter {
     }
 
     // без -> бяз
-    private String checkBez(String current, ParsedElement next) {
+    private String checkBez(String current) {
         if (current.equals("бяз")) {
             return "без";
         }

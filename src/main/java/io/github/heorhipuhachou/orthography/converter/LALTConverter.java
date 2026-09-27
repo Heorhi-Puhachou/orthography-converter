@@ -8,8 +8,8 @@ public class LALTConverter extends BaseConverter {
         }
         String officialText = (new LAKAConverter()).convert(text);   // LA -> KA
         String classicText = (new KAKKConverter()).convert(officialText); // KA -> KK
-        String latinText = (new KKLTConverter()).convert(classicText); // KK -> LT
+        // KK -> LT
 
-        return latinText;
+        return (new KKLTConverter()).convert(classicText);
     }
 }

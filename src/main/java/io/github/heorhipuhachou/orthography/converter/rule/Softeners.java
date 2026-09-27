@@ -6,7 +6,7 @@ public class Softeners {
     private static Softeners single_instance = null;
 
 
-    private ArrayList<String> softeners;
+    private final ArrayList<String> softeners;
 
 
     private Softeners() {

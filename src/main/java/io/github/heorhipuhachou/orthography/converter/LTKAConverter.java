@@ -7,8 +7,8 @@ public class LTKAConverter extends BaseConverter {
             return text;
         }
         String classicText = (new LTKKConverter()).convert(text);   // ŁT -> KK
-        String officialText = (new KKKAConverter()).convert(classicText); // KK -> KA
+        // KK -> KA
 
-        return officialText;
+        return (new KKKAConverter()).convert(classicText);
     }
 }

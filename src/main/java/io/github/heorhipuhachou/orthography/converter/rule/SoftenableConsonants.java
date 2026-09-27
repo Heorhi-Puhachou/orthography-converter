@@ -6,7 +6,7 @@ public class SoftenableConsonants {
     private static SoftenableConsonants single_instance = null;
 
 
-    private ArrayList<String> softenableConsonants;
+    private final ArrayList<String> softenableConsonants;
 
 
     private SoftenableConsonants() {

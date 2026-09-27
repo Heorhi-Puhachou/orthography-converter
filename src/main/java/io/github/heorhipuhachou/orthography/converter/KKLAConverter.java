@@ -7,8 +7,7 @@ public class KKLAConverter extends BaseConverter {
             return text;
         }
         String officialText = (new KKKAConverter()).convert(text);
-        String latinText = (new KALAConverter()).convert(officialText);
 
-        return latinText;
+        return (new KALAConverter()).convert(officialText);
     }
 }

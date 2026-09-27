@@ -4,14 +4,13 @@ public class StringUtilGet {
 
     public static String findFirstVowel(String word) {
         char[] chars = word.toCharArray();
-        String result = null;
 
         for (int i = 0; i < word.length(); i++) {
             if (StringUtilCheck.isVowel("" + chars[i])) {
                 return "" + chars[i];
             }
         }
-        return result;
+        return null;
     }
 
     public static int getVowelQuantity(String word) {

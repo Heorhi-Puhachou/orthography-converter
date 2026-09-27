@@ -8,7 +8,7 @@ public class TemplateReplace {
     private static TemplateReplace single_instance = null;
 
 
-    private ArrayList<ReplacementPair> templateReplace;
+    private final ArrayList<ReplacementPair> templateReplace;
 
 
     private TemplateReplace() {

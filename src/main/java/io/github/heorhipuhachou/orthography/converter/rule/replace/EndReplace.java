@@ -8,7 +8,7 @@ public class EndReplace {
     private static EndReplace single_instance = null;
 
 
-    private ArrayList<ReplacementPair> endReplace;
+    private final ArrayList<ReplacementPair> endReplace;
 
 
     private EndReplace() {

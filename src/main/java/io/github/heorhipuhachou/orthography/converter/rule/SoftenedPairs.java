@@ -8,14 +8,14 @@ public class SoftenedPairs {
     private static SoftenedPairs single_instance = null;
 
 
-    private ArrayList<String> softenedPairs;
+    private final ArrayList<String> softenedPairs;
 
 
     private SoftenedPairs() {
         softenedPairs = new ArrayList<>();
-        for(int i = 0; i<SofteningConsonants.getSofteningConsonants().size(); i++){
-            for (int j=0; j<Softeners.getSofteners().size(); j++){
-                softenedPairs.add(SofteningConsonants.getSofteningConsonants().get(i)+Softeners.getSofteners().get(j));
+        for (int i = 0; i < SofteningConsonants.getSofteningConsonants().size(); i++) {
+            for (int j = 0; j < Softeners.getSofteners().size(); j++) {
+                softenedPairs.add(SofteningConsonants.getSofteningConsonants().get(i) + Softeners.getSofteners().get(j));
             }
         }
     }

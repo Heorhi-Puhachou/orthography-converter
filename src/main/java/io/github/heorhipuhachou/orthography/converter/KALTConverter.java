@@ -7,8 +7,7 @@ public class KALTConverter extends BaseConverter {
             return text;
         }
         String classicText = (new KAKKConverter()).convert(text);
-        String latinText = (new KKLTConverter()).convert(classicText);
 
-        return latinText;
+        return (new KKLTConverter()).convert(classicText);
     }
 }

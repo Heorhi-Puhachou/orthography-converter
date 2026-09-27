@@ -1,14 +1,15 @@
 package io.github.heorhipuhachou.orthography.parser;
 
 
+import io.github.heorhipuhachou.orthography.util.StringUtilTransform;
 import io.github.heorhipuhachou.orthography.util.WordCase;
 
 public class ParsedElement {
 
-    private String delimiter;
-    private String originalWord;
-    private String word;
-    private WordCase wordCase;
+    private final String delimiter;
+    private final String originalWord;
+    private final String word;
+    private final WordCase wordCase;
 
     public ParsedElement(String delimiter, String originalWord) {
         this.delimiter = delimiter;
@@ -48,7 +49,7 @@ public class ParsedElement {
             return WordCase.OTHER;
         }
 
-        if (word.equals(firstLetterToUpperCase(word))) {
+        if (word.equals(StringUtilTransform.firstLetterToUpperCase(word))) {
             return WordCase.FIRST_LETTER_UPPER;
         }
 
@@ -61,11 +62,5 @@ public class ParsedElement {
         }
 
         return WordCase.OTHER;
-    }
-
-    private static String firstLetterToUpperCase(String word) {
-        String low = word.toLowerCase();
-        String first = low.substring(0, 1);
-        return first.toUpperCase() + low.substring(1);
     }
 }
