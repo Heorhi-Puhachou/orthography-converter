@@ -1,11 +1,13 @@
-import io.github.heorhipuhachou.orthography.converter.KAKKConverter;
+import io.github.heorhipuhachou.orthography.Converter;
+import io.github.heorhipuhachou.orthography.Converters;
+import io.github.heorhipuhachou.orthography.Orthography;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class KAKKConverterTest {
 
-    private static final KAKKConverter converter = new KAKKConverter();
+    private static final Converter converter = Converters.between(Orthography.KA, Orthography.KK);
 
     @Test
     public void testTransformEIntoJa() {

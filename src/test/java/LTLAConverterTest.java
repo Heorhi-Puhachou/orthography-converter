@@ -1,11 +1,13 @@
-import io.github.heorhipuhachou.orthography.converter.LTLAConverter;
+import io.github.heorhipuhachou.orthography.Converter;
+import io.github.heorhipuhachou.orthography.Converters;
+import io.github.heorhipuhachou.orthography.Orthography;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class LTLAConverterTest {
 
-    private static final LTLAConverter converter = new LTLAConverter();
+    private static final Converter converter = Converters.between(Orthography.LT, Orthography.LA);
 
     @Test
     public void test() {

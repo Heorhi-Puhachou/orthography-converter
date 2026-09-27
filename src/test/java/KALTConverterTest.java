@@ -1,11 +1,13 @@
-import io.github.heorhipuhachou.orthography.converter.KALTConverter;
+import io.github.heorhipuhachou.orthography.Converter;
+import io.github.heorhipuhachou.orthography.Converters;
+import io.github.heorhipuhachou.orthography.Orthography;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class KALTConverterTest {
 
-    private static final KALTConverter converter = new KALTConverter();
+    private static final Converter converter = Converters.between(Orthography.KA, Orthography.LT);
 
     @Test
     public void test() {

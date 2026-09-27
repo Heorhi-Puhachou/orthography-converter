@@ -1,6 +1,6 @@
 package io.github.heorhipuhachou.orthography.converter;
 
-
+import io.github.heorhipuhachou.orthography.Converter;
 import io.github.heorhipuhachou.orthography.converter.rule.DoubleSoftConsonants;
 import io.github.heorhipuhachou.orthography.converter.rule.SoftenableConsonants;
 import io.github.heorhipuhachou.orthography.converter.rule.SoftenedPairs;
@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import static io.github.heorhipuhachou.orthography.util.StringUtilTransform.transformCase;
 
 
-public class KKKAConverter extends BaseConverter {
+public class KKKAConverter implements Converter {
 
     private final Parser parser;
 
@@ -28,6 +28,7 @@ public class KKKAConverter extends BaseConverter {
         this.parser = new Parser();
     }
 
+    @Override
     public String convert(String text) {
 
         if (text == null || text.isEmpty()) {

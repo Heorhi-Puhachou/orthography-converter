@@ -1,4 +1,6 @@
-import io.github.heorhipuhachou.orthography.converter.LTKKConverter;
+import io.github.heorhipuhachou.orthography.Converter;
+import io.github.heorhipuhachou.orthography.Converters;
+import io.github.heorhipuhachou.orthography.Orthography;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertAll;
@@ -6,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class LTKKConverterTest {
 
-    private static final LTKKConverter converter = new LTKKConverter();
+    private static final Converter converter = Converters.between(Orthography.LT, Orthography.KK);
 
     @Test
     public void test() {

@@ -1,6 +1,6 @@
 package io.github.heorhipuhachou.orthography.converter;
 
-
+import io.github.heorhipuhachou.orthography.Converter;
 import io.github.heorhipuhachou.orthography.parser.ParsedElement;
 import io.github.heorhipuhachou.orthography.parser.Parser;
 import io.github.heorhipuhachou.orthography.util.StringUtilCheck;
@@ -11,7 +11,7 @@ import java.util.HashMap;
 
 import static io.github.heorhipuhachou.orthography.util.StringUtilTransform.transformCase;
 
-public class KALAConverter extends BaseConverter {
+public class KALAConverter implements Converter {
 
     private final Parser parser;
     private final HashMap<String, String> pairs;
@@ -62,6 +62,7 @@ public class KALAConverter extends BaseConverter {
         softLetters.put("z", "ź");
     }
 
+    @Override
     public String convert(String text) {
         if (text == null || text.isEmpty()) {
             return text;

@@ -1,11 +1,13 @@
-import io.github.heorhipuhachou.orthography.converter.KKKAConverter;
+import io.github.heorhipuhachou.orthography.Converter;
+import io.github.heorhipuhachou.orthography.Converters;
+import io.github.heorhipuhachou.orthography.Orthography;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class KKKAConverterTest {
 
-    private static final KKKAConverter converter = new KKKAConverter();
+    private static final Converter converter = Converters.between(Orthography.KK, Orthography.KA);
 
     @Test
     public void test() {

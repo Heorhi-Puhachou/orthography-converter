@@ -1,6 +1,6 @@
 package io.github.heorhipuhachou.orthography.converter;
 
-
+import io.github.heorhipuhachou.orthography.Converter;
 import io.github.heorhipuhachou.orthography.parser.ParsedElement;
 import io.github.heorhipuhachou.orthography.parser.Parser;
 import io.github.heorhipuhachou.orthography.util.StringUtilCheck;
@@ -12,7 +12,7 @@ import java.util.Map;
 
 import static io.github.heorhipuhachou.orthography.util.StringUtilTransform.transformCase;
 
-public class KKLTConverter extends BaseConverter {
+public class KKLTConverter implements Converter {
 
     private final Parser parser;
     private final HashMap<String, String> pairs;
@@ -70,6 +70,7 @@ public class KKLTConverter extends BaseConverter {
         pairsL.put("łiu", "lu");
     }
 
+    @Override
     public String convert(String text) {
         if (text == null || text.isEmpty()) {
             return text;

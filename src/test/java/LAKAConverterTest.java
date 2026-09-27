@@ -1,4 +1,6 @@
-import io.github.heorhipuhachou.orthography.converter.LAKAConverter;
+import io.github.heorhipuhachou.orthography.Converter;
+import io.github.heorhipuhachou.orthography.Converters;
+import io.github.heorhipuhachou.orthography.Orthography;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertAll;
@@ -6,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class LAKAConverterTest {
 
-    private static final LAKAConverter converter = new LAKAConverter();
+    private static final Converter converter = Converters.between(Orthography.LA, Orthography.KA);
 
     @Test
     public void test() {

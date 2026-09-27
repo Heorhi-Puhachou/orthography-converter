@@ -1,11 +1,13 @@
-import io.github.heorhipuhachou.orthography.converter.LAKKConverter;
+import io.github.heorhipuhachou.orthography.Converter;
+import io.github.heorhipuhachou.orthography.Converters;
+import io.github.heorhipuhachou.orthography.Orthography;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class LAKKConverterTest {
 
-    private static final LAKKConverter converter = new LAKKConverter();
+    private static final Converter converter = Converters.between(Orthography.LA, Orthography.KK);
 
     @Test
     public void test() {
