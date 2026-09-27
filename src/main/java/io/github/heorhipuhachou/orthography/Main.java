@@ -32,12 +32,12 @@ public class Main {
             System.out.println("  ŁT - Łacinka Tradycyjnaja");
             System.out.println("  LA - Łacinka Aficyjnaja");
             System.out.println("  KK - Kiryličny Klasyčny (pravapis)");
-            System.out.println("  KA - Kirylica Aficyjny (pravapis)");
+            System.out.println("  KA - Kiryličny Aficyjny (pravapis)");
             System.out.println("- šlach da txt-fajła, jaki budzie kanvertavacca");
             System.out.println("- pravapis novaha fajła (ŁT, LA, KK, KA)");
             System.out.println("- šlach da  novaha fajła");
             System.out.println("\nprykład:");
-            System.out.println("java -jar converter.jar KA krynica.txt ŁT vynik.txt\n");
+            System.out.println("java -jar orthography-converter.jar KA krynica.txt ŁT vynik.txt\n");
         } else {
             String inputStyle = args[0];
             String inputPath = args[1];
@@ -56,6 +56,8 @@ public class Main {
             System.out.println("Niapravilny styl uvachodnaha fajła.");
         } else if (!validStyle(outputStyle)) {
             System.out.println("Niapravilny styl vychodnaha fajła.");
+        } else if (toEnumCode(inputStyle).equals(toEnumCode(outputStyle))) {
+            System.out.println("Pravapis uvachodnaha i vychodnaha fajła adnolkavy.");
         } else {
             BaseConverter converter = getConverterByStyles(inputStyle, outputStyle);
             convertToFile(inputPath, outputPath, converter);
