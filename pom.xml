@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>by.kanvertar.pravapisu</groupId>
-    <artifactId>pravapis</artifactId>
+    <groupId>io.github.heorhi-puhachou</groupId>
+    <artifactId>orthography-converter</artifactId>
     <version>0.0.1</version>
 
     <dependencies>
@@ -18,7 +18,7 @@
     </dependencies>
 
     <build>
-        <finalName>pravapis</finalName>
+        <finalName>orthography-converter</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -28,7 +28,7 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>by.kanvertar.pravapisu.Zapusk</mainClass>
+                            <mainClass>io.github.heorhipuhachou.orthography.Main</mainClass>
                         </manifest>
                         <manifestEntries>
                             <Built-By>Małatok Biełaruski</Built-By>

@@ -13,12 +13,12 @@ Patrebnyja Java 21 (JDK) i Maven. Kab atrymać jar-fajł, dastatkova vykanać ka
 mvn clean install
 ```
 
-Jar-fajł źjavicca ŭ `target/pravapis.jar`.
+Jar-fajł źjavicca ŭ `target/orthography-converter.jar`.
 
 Prykład kamandy dla lakalnaha zapusku atrymanaha jar-fajła:
 
 ```
-java -jar target/pravapis.jar KA /home/heorhi/Dakumenty/test.txt ŁT /home/heorhi/Dakumenty/test2.txt
+java -jar target/orthography-converter.jar KA /home/heorhi/Dakumenty/test.txt ŁT /home/heorhi/Dakumenty/test2.txt
 ```
 
 Arhumentaŭ pavinna być 4:

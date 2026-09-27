@@ -24,7 +24,7 @@ public class JarIT {
     private static final Path OUTPUT = Paths.get("target/jar-test");
 
     @TestFactory
-    Stream<DynamicTest> kanvertacyjaFajla() throws IOException {
+    Stream<DynamicTest> convertsFile() throws IOException {
         List<Path> dirs;
         try (Stream<Path> list = Files.list(CASES)) {
             dirs = list.sorted().toList();
@@ -33,7 +33,7 @@ public class JarIT {
     }
 
     private static void check(Path dir) throws Exception {
-        String[] kody = dir.getFileName().toString().split("-");
+        String[] codes = dir.getFileName().toString().split("-");
         Path output = OUTPUT.resolve(dir.getFileName()).resolve("output.txt");
         Files.createDirectories(output.getParent());
         Files.deleteIfExists(output);
@@ -41,8 +41,8 @@ public class JarIT {
         Process process = new ProcessBuilder(
                 Paths.get(System.getProperty("java.home"), "bin", "java").toString(),
                 "-jar", JAR.toString(),
-                kody[0], dir.resolve("input.txt").toString(),
-                kody[1], output.toString())
+                codes[0], dir.resolve("input.txt").toString(),
+                codes[1], output.toString())
                 .redirectErrorStream(true)
                 .start();
         String log = new String(process.getInputStream().readAllBytes(), StandardCharsets.UTF_8);

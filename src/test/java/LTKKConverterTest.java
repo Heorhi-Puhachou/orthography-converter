@@ -1,0 +1,15 @@
+import io.github.heorhipuhachou.orthography.converter.LTKKConverter;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+public class LTKKConverterTest {
+
+    private static final LTKKConverter converter = new LTKKConverter();
+
+    @Test
+    public void test() {
+        assertEquals("каб чалавек Божы быў дасканальным, да ўсякага добрага дзела гатовым", converter.convert("kab čałaviek Božy byŭ daskanalnym, da ŭsiakaha dobraha dzieła hatovym"));
+        assertEquals("каваль дасканальным сьнег", converter.convert("kaval daskanalnym śnieh"));
+    }
+}
