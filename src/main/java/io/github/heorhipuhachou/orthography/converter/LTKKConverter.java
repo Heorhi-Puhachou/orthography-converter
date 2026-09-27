@@ -93,21 +93,25 @@ public class LTKKConverter extends BaseConverter {
 
     private String advancedReplace(String word) {
         String preparedWord = replaceVowelsAndL(word);
-
-        String result = "";
-
-        char[] chars = preparedWord.toCharArray();
-
-        for (int i = 0; i < preparedWord.length(); i++) {
-            if (StringUtilCheck.isNumber(chars[i]) || StringUtilCheck.isCyrillicSymbol(chars[i])) {
-                result = result + chars[i];
+        StringBuilder result = new StringBuilder();
+        int i = 0;
+        while (i < preparedWord.length()) {
+            char c = preparedWord.charAt(i);
+            String two = i + 1 < preparedWord.length() ? preparedWord.substring(i, i + 2) : null;
+            if (StringUtilCheck.isNumber(c) || StringUtilCheck.isCyrillicSymbol(c)) {
+                result.append(c);
+                i++;
+            } else if (two != null && pairs.containsKey(two)) {
+                // dźvie litary z adnym hukam: ch, ja, je, jo, ju
+                result.append(pairs.get(two));
+                i += 2;
             } else {
-                String symbol = pairs.get("" + chars[i]);
-                result = result + symbol;
+                // litara, jakoj niama ŭ tablicy, zastajecca jak josć
+                result.append(pairs.getOrDefault(String.valueOf(c), String.valueOf(c)));
+                i++;
             }
         }
-
-        return result;
+        return result.toString();
     }
 
     private String replaceVowelsAndL(String word) {
